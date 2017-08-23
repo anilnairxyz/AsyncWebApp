@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-A dummy flask web service API that:
-runs a task on celery that takes a reasonable long time
+A flask web service API that:
+runs a dummy task on celery that takes a reasonable long time
 responds with 202 and the poll link
 updates progress on the poll link
-Configs for Redis broker
+Includes configs for Redis broker
 """
 from flask import Flask, request, jsonify, make_response
 import time
