@@ -13,10 +13,13 @@ from celery import Celery
 app = Flask(__name__)
 
 
-# Celery configuration
-app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
-app.config['CELERY_RESULT_BACKEND'] = 'redis://localhost:6379/0'
+# Celery configuration for redis broker
+#app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
+#app.config['CELERY_RESULT_BACKEND'] = 'redis://localhost:6379/0'
 
+# Celery configuration for rabbitMQ broker
+app.config['CELERY_BROKER_URL'] = 'amqp://guest:guest@localhost:5672//'
+app.config['CELERY_RESULT_BACKEND'] = 'rpc://'
 
 # Initialize Celery
 celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
