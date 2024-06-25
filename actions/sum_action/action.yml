@@ -10,7 +10,7 @@ inputs:
     description: "Second integer value"
     required: true
   NUMBERS_FILE:
-    description: "Path to the numbers.yaml file"
+    description: "Numbers file as a yaml string"
     required: true
 runs:
   using: "docker"

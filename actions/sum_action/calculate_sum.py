@@ -1,10 +1,7 @@
 # sum_action/calculate_sum.py
 
 import yaml
-import sys
-
 import os
-import yaml
 
 def main():
     # Read environment variables

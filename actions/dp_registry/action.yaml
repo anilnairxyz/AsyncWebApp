@@ -1,4 +1,4 @@
-# action.yaml
+# dp_registry/action.yaml
 name: 'Register data product'
 description: 'A GitHub Action that takes a data product yaml specification as input and registers the data product on the data product registry'
 author: Anil Nair
@@ -8,6 +8,9 @@ inputs:
     required: true
   CLIENT_SECRET:
     description: "The client secret for EntraID"
+    required: true
+  DP_SPEC:
+    description: "Data Product specifications as a JSON string"
     required: true
 runs:
   using: "docker"
