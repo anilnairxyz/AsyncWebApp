@@ -1,16 +1,11 @@
 import os
-import sys
 
 # get the input and convert it to int
 a = os.environ.get("CLIENT_ID")
 b = os.environ.get("CLIENT_SECRET")
-c = sys.argv[1]
 if a and b:
     try:
-        if c:
-            num = int(a) + int(b) + int(c)
-        else:
-            num = int(a) + int(b)
+        num = int(a) + int(b)
     except Exception:
         exit('ERROR: the INPUT_NUM provided ("{}") is not an integer'.format(a))
 else:
