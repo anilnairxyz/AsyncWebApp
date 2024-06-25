@@ -17,11 +17,12 @@ def main():
     numbers = yaml.safe_load(numbers_file)
     print (numbers)
 
-    yaml_number1 = numbers['numbers']['number1']
-    yaml_number2 = numbers['numbers']['number2']
+    # yaml_number1 = numbers['numbers']['number1']
+    # yaml_number2 = numbers['numbers']['number2']
 
     # Calculate the sum
-    total = val_a + val_b + yaml_number1 + yaml_number2
+    # total = val_a + val_b + yaml_number1 + yaml_number2
+    total = val_a + val_b
     
     # Output the result
     print(f"The sum of VAL_A, VAL_B, number1, and number2 is: {total}")
