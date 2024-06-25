@@ -26,7 +26,7 @@ jobs:
       - name: Get specification
         id: get_specification
         run: |
-          spec_content=$(cat ${{ github.event.inputs.numbers_file_path }})
+          spec_content=$(cat ${{ github.event.inputs.dp_spec_file_path }})
           echo "SPEC_CONTENT<<EOF" >> $GITHUB_ENV
           echo "$spec_content" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
