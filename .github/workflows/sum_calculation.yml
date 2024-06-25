@@ -1,0 +1,25 @@
+# .github/workflows/sum_calculation.yml
+
+name: Calculate Sum
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  calculate_sum:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: Use Sum Action
+      uses: ./actions/sum_action
+      with:
+        VAL_A: ${{ secrets.VAL_A }}
+        VAL_B: ${{ secrets.VAL_B }}

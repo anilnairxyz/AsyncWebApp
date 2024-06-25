@@ -1,0 +1,14 @@
+# sum-action/action.yml
+
+name: "Sum Action"
+description: "Calculate the sum of two environment variables"
+inputs:
+  VAL_A:
+    description: "First integer value"
+    required: true
+  VAL_B:
+    description: "Second integer value"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
