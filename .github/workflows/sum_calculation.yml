@@ -1,5 +1,4 @@
 # .github/workflows/sum_calculation.yml
-
 name: Calculate Sum
 
 on:
