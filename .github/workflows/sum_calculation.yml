@@ -24,6 +24,11 @@ jobs:
       run: |
         echo "yaml_content=$(cat ./template/numbers.yaml)" >> $GITHUB_ENV
     
+    - name: Print specific environment variables
+      run: |
+        echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
+        echo "GITHUB_ENV: $GITHUB_ENV"
+
     - name: Use Sum Action
       uses: ./actions/sum_action
       with:
