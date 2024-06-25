@@ -9,6 +9,13 @@ inputs:
     required: true
     default: prod
 
+  CLIENT_ID:
+    description: The client identifier for EntraID
+    required: true
+  CLIENT_SECRET:
+    description: The client secret for EntraID
+    required: true
+
 outputs:
   num_squared:
     description: 'Square of the input'
@@ -25,8 +32,5 @@ runs:
       shell: bash
     - name: run python file
       id: dp-registry
-      shell: bash
-      env:
-        CLIENT_ID: ${{ secrets.CLIENT_ID }}
-        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
       run: python actions/dp_registry/src/register.py
+      shell: bash
