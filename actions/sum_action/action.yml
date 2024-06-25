@@ -1,4 +1,4 @@
-# sum-action/action.yml
+# sum_action/action.yml
 
 name: "Sum Action"
 description: "Calculate the sum of two environment variables"
@@ -9,6 +9,14 @@ inputs:
   VAL_B:
     description: "Second integer value"
     required: true
+  NUMBERS_FILE:
+    description: "Path to the numbers.yaml file"
+    required: true
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.VAL_A }}
+    - ${{ inputs.VAL_B }}
+    - ${{ inputs.NUMBERS_FILE }}
+

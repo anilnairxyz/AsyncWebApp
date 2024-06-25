@@ -11,7 +11,7 @@ on:
         default: "prod"
         type: environment
 
-jobs:
+  jobs:
   calculate_sum:
     runs-on: ubuntu-latest
     environment: ${{ github.event.inputs.environment }}
@@ -25,3 +25,4 @@ jobs:
       with:
         VAL_A: ${{ secrets.VAL_A }}
         VAL_B: ${{ secrets.VAL_B }}
+        NUMBERS_FILE: ./template/numbers.yaml

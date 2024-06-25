@@ -1,0 +1,5 @@
+# templates/numbers.yaml
+numbers:
+  number1: 5
+  number2: 10
+

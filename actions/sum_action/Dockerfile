@@ -1,7 +1,16 @@
-# sum-action/Dockerfile
+# sum_action/Dockerfile
 
-FROM python:3.8-slim
+FROM python:3.11-slim
 
-COPY calculate_sum.py /calculate_sum.py
+# Set the working directory
+WORKDIR /action
 
-ENTRYPOINT ["python", "/calculate_sum.py"]
+# Copy requirements.txt and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the Python script
+COPY calculate_sum.py .
+
+# Entry point to run the script
+ENTRYPOINT ["python", "/action/calculate_sum.py"]

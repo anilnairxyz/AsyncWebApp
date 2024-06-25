@@ -1,4 +1,4 @@
-# sum-action/Dockerfile
+# dp_registry/Dockerfile
 
 FROM python:3.11-slim
 
