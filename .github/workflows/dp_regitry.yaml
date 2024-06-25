@@ -23,7 +23,7 @@ jobs:
         uses: ./actions/dp_registry # Uses an action in the register directory
         # or use a released GitHub Action
         # uses: shipyard/github-action/fetch-shipyard-env@1.0.0
-        secrets:
+        with:
           client_id: ${{ secrets.ENTRA_CLIENT_ID }}
           client_secret: ${{ secrets.ENTRA_CLIENT_SECRET }}
       - name: Print the square

@@ -34,6 +34,3 @@ runs:
       id: dp-registry
       run: python actions/dp_register/src/register.py ${{ github.event.inputs.yaml_path }}
       shell: bash
-      env:
-        CLIENT_ID: ${{ secrets.CLIENT_ID }}
-        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
