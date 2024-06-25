@@ -34,3 +34,6 @@ runs:
       id: dp-registry
       run: python actions/dp_registry/src/register.py
       shell: bash
+      env:
+        CLIENT_ID: ${{ inputs.client_id }}
+        CLIENT_SECRET: ${{ inputs.client_secret }}
