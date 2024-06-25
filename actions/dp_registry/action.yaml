@@ -1,0 +1,39 @@
+# action.yaml
+name: 'Register data product'
+description: 'A GitHub Action that takes a data product yaml specification as input and registers the data product on the data product registry'
+author: Anil Nair
+inputs:
+  environment:
+    description: "Environment to deploy to"
+    type: environment
+    required: true
+    default: prod
+
+  client_id:
+    description: The client identifier for EntraID
+    required: true
+  client_secret:
+    description: The client secret for EntraID
+    required: true
+
+outputs:
+  num_squared:
+    description: 'Square of the input'
+    value: ${{ steps.get-square.outputs.num_squared }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'  
+    - name: Install Dependencies
+      run: pip install -r actions/register/requirements.txt
+      shell: bash
+    - name: run python file
+      id: dp-registry
+      run: python actions/dp_register/src/register.py ${{ github.event.inputs.yaml_path }}
+      shell: bash
+      env:
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
