@@ -14,13 +14,21 @@ on:
 jobs:
   calculate_sum:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    
-    - name: Use Sum Action
-      uses: ./actions/sum_action
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
       with:
+        python-version: '3.x'
+    
+    - name: Install dependencies
+      run: python -m pip install --upgrade pip
+    
+    - name: Calculate Sum
+      env:
         VAL_A: ${{ secrets.VAL_A }}
         VAL_B: ${{ secrets.VAL_B }}
+      run: python calculate_sum.py
+
