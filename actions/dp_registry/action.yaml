@@ -32,5 +32,5 @@ runs:
       shell: bash
     - name: run python file
       id: dp-registry
-      run: python actions/dp_register/src/register.py ${{ github.event.inputs.yaml_path }}
+      run: python actions/dp_registry/src/register.py ${{ github.event.inputs.yaml_path }}
       shell: bash
