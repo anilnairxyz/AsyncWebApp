@@ -1,6 +1,15 @@
 # .github/workflows/register_dp.yaml
 name: Register Data Product
-on: [push]
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to deploy to"
+        required: true
+        default: "prod"
+        type: environment
+
 
 jobs:
   get-num-square:
