@@ -9,7 +9,7 @@ def main():
     data_product_spec = os.getenv('INPUT_DP_SPEC')
 
     # Read attributes from data product spec file
-    numbers = json.loads(data_product_spec)
+    numbers = json.loads(data_product_spec.decode('utf-8'))
 
     number1 = numbers['numbers']['number1']
     number2 = numbers['numbers']['number2']
