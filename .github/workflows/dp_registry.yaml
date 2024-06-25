@@ -22,7 +22,7 @@ jobs:
         id: dp_registry
         uses: ./actions/dp_registry
         with:
-          CLIENT_ID: ${{ secrets.ENTRA_CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
       - name: Print the output
         run: echo "${{ steps.dp_registry.outputs.num_squared }}"
