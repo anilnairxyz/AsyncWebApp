@@ -19,11 +19,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Fetch num squared
-        id: get_square
-        uses: ./actions/register # Uses an action in the register directory
-        # or use a released GitHub Action
-        # uses: shipyard/github-action/fetch-shipyard-env@1.0.0
+        id: get_squared
+        uses: ./actions/get_squared 
         with:
           num: 11
       - name: Print the square
-        run: echo "${{ steps.get_square.outputs.num_squared }}"
+        run: echo "${{ steps.get_squared.outputs.num_squared }}"

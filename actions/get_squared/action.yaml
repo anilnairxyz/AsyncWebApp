@@ -33,5 +33,5 @@ runs:
       shell: bash
     - name: Fetch the number's square
       id: get-square
-      run: python actions/register/src/register.py
+      run: python actions/get_squared/src/get_squared.py
       shell: bash
