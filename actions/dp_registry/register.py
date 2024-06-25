@@ -10,7 +10,7 @@ def main():
     print (data_product_spec)
 
     # Read attributes from data product spec file
-    numbers = json.loads(data_product_spec)
+    numbers = json.load(data_product_spec)
 
     number1 = numbers['numbers']['number1']
     number2 = numbers['numbers']['number2']
