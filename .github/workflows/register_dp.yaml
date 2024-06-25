@@ -1,5 +1,5 @@
 # .github/workflows/register_dp.yaml
-name: Register Data Product
+name: num squared
 
 on:
   workflow_dispatch:
