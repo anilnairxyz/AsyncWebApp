@@ -21,11 +21,12 @@ jobs:
 
     - name: Get template
       id: get_template
-      run: echo "template=$(cat ./templates/numbers.yaml)" >> $GITHUB_OUTPUT
+      run: |
+        echo "yaml_content=$(cat ./template/numbers.yaml)" >> $GITHUB_ENV
     
     - name: Use Sum Action
       uses: ./actions/sum_action
       with:
         VAL_A: ${{ secrets.VAL_A }}
         VAL_B: ${{ secrets.VAL_B }}
-        NUMBERS_FILE: ${{ steps.get_template.outputs.template }}
+        NUMBERS_FILE: ${{ env.yaml_content }}
