@@ -22,7 +22,10 @@ jobs:
     - name: Get template
       id: get_template
       run: |
-        echo "yaml_content=$(cat ./templates/numbers.yaml)" >> $GITHUB_ENV
+        yaml_content=$(cat ./templates/numbers.yaml)
+        echo "YAML_CONTENT<<EOF" >> $GITHUB_ENV
+        echo "$yaml_content" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
     
     - name: Print specific environment variables
       run: |
