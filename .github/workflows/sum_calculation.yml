@@ -9,6 +9,10 @@ on:
         required: true
         default: "prod"
         type: environment
+      numbers_file_path:
+        description: "Path to the numbers.yaml file"
+        required: true
+        default: "./templates/numbers.yaml"
 
 jobs:
   calculate_sum:
@@ -22,7 +26,7 @@ jobs:
     - name: Get template
       id: get_template
       run: |
-        yaml_content=$(cat ./templates/numbers.yaml)
+        yaml_content=$(cat ${{ github.event.inputs.numbers_file_path }})
         echo "YAML_CONTENT<<EOF" >> $GITHUB_ENV
         echo "$yaml_content" >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
