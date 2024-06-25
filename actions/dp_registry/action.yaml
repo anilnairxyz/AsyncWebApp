@@ -28,7 +28,7 @@ runs:
       with:
         python-version: '3.11'  
     - name: Install Dependencies
-      run: pip install -r actions/register/requirements.txt
+      run: pip install -r actions/dp_registry/requirements.txt
       shell: bash
     - name: run python file
       id: dp-registry
