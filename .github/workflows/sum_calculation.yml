@@ -30,11 +30,11 @@ jobs:
     - name: Print specific environment variables
       run: |
         echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
-        echo "GITHUB_ENV: $GITHUB_ENV"
+        echo "YAML_CONTENT: $YAML_CONTENT"
 
     - name: Use Sum Action
       uses: ./actions/sum_action
       with:
         VAL_A: ${{ secrets.VAL_A }}
         VAL_B: ${{ secrets.VAL_B }}
-        NUMBERS_FILE: ${{ env.yaml_content }}
+        NUMBERS_FILE: ${{ env.YAML_CONTENT }}
