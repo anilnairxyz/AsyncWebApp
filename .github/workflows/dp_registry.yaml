@@ -12,7 +12,7 @@ on:
       dp_spec_file_path:
         description: "Path to the data product spec file"
         required: true
-        default: "./templates/data_product_spec.json'
+        default: "./templates/data_product_spec.json"
 
 jobs:
   register_data_product:
