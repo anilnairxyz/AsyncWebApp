@@ -15,8 +15,3 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-  args:
-    - ${{ inputs.VAL_A }}
-    - ${{ inputs.VAL_B }}
-    - ${{ inputs.NUMBERS_FILE }}
-

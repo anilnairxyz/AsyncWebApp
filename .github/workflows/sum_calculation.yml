@@ -18,10 +18,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - name: Get template
+      id: get_template
+      run: echo "template=$(cat ./templates/numbers.yaml)" >> $GITHUB_OUTPUT
     
     - name: Use Sum Action
       uses: ./actions/sum_action
       with:
         VAL_A: ${{ secrets.VAL_A }}
         VAL_B: ${{ secrets.VAL_B }}
-        NUMBERS_FILE: ./template/numbers.yaml
+        NUMBERS_FILE: ${{ steps.get_template.outputs.template }}
