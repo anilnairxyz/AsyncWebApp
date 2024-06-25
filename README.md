@@ -21,3 +21,4 @@ A Flask Web App using Celery and RedisQ / RabbitMQ
 * curl to test the app
 
 # GitHub Actions
+* Action templeate for python
