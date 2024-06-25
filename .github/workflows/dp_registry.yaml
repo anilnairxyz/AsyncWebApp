@@ -14,15 +14,12 @@ on:
 jobs:
   get-num-square:
     runs-on: ubuntu-latest
-    name: Returns the number square
+    name: Register a data product
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Fetch num squared
-        id: get_square
+      - name: register data product
+        id: dp_registry
         uses: ./actions/dp_registry
-        with:
-          client_id: ${{ secrets.ENTRA_CLIENT_ID }}
-          client_secret: ${{ secrets.ENTRA_CLIENT_SECRET }}
-      - name: Print the square
-        run: echo "${{ steps.get_square.outputs.num_squared }}"
+      - name: Print the output
+        run: echo "${{ steps.dp_registry.outputs.num_squared }}"

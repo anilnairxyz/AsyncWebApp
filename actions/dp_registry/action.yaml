@@ -9,13 +9,6 @@ inputs:
     required: true
     default: prod
 
-  client_id:
-    description: The client identifier for EntraID
-    required: true
-  client_secret:
-    description: The client secret for EntraID
-    required: true
-
 outputs:
   num_squared:
     description: 'Square of the input'
