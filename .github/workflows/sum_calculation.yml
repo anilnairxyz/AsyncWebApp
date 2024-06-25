@@ -27,11 +27,6 @@ jobs:
         echo "$yaml_content" >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
     
-    - name: Print specific environment variables
-      run: |
-        echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
-        echo "YAML_CONTENT: $YAML_CONTENT"
-
     - name: Use Sum Action
       uses: ./actions/sum_action
       with:
