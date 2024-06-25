@@ -20,3 +20,4 @@ A Flask Web App using Celery and RedisQ / RabbitMQ
 ```celery worker -A app.celery --loglevel=info```
 * curl to test the app
 
+# GitHub Actions
