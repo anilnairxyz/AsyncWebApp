@@ -57,7 +57,7 @@ def main():
     print(data_products)
 
     print(f"The first data product team is: {data_products[0]['team']['name']}")
-    print(f"The first data product id is: {data_products[0]['id']}")
+    print(f"The first data product id is: {data_products[0]['data_product_id']}")
 
 if __name__ == "__main__":
     main()
