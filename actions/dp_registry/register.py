@@ -11,7 +11,8 @@ def main():
     # Read attributes from data product spec file
     data_product_spec = json.loads(data_product_spec)
 
-    print(f"The data product name is: {data_product_spec["display_name"]}")
+    print(f"The data product name is: {data_product_spec['display_name']}")
+    print(f"The data product team is: {data_product_spec['team']['name']}")
 
 if __name__ == "__main__":
     main()
