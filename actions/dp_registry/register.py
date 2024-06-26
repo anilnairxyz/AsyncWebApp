@@ -5,7 +5,7 @@ import json
 import requests
 
 
-class EntraAuth():
+class DataProductRegistration():
 
     def __init__(self):
         self.CLIENT_ID = os.getenv('INPUT_CLIENT_ID')
@@ -49,12 +49,10 @@ def main():
     print(f"The data product team is: {data_product_spec['team']['name']}")
 
     # Get data products from DPR
-    entra_auth = EntraAuth()
-    auth_response = entra_auth.authorisation()
+    registration = DataProductRegistration()
+    auth_response = registration.authorisation()
     access_token = auth_response.get("access_token")
-    data_products = entra_auth.get_data_products(access_token)
-    print (len(data_products))
-    print(data_products)
+    data_products = registration.get_data_products(access_token)
 
     print(f"The first data product team is: {data_products[0]['team']['name']}")
     print(f"The first data product id is: {data_products[0]['data_product_id']}")
