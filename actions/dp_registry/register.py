@@ -8,8 +8,8 @@ import requests
 class EntraAuth():
 
     def __init__(self):
-        self.CLIENT_ID = int(os.getenv('INPUT_CLIENT_ID'))
-        self.CLIENT_SECRET = int(os.getenv('INPUT_CLIENT_SECRET'))
+        self.CLIENT_ID = os.getenv('INPUT_CLIENT_ID')
+        self.CLIENT_SECRET = os.getenv('INPUT_CLIENT_SECRET')
         self.SCOPE = "https://api.prod.ingka.com/.default"
         self.DPR_URL = 'https://api.ingka.ikea.com/dpr/v1/data_product'
         self.AUTH_URL = "https://login.microsoftonline.com/720b637a-655a-40cf-816a-f22f40755c2c/oauth2/v2.0/token"
