@@ -29,14 +29,20 @@ class DataProductRegistration():
         response = requests.post(self.AUTH_URL, headers=headers, data=payload)
         return response.json()
 
-
     def get_data_products(self, access_token):
-        GET_URL = 'https://api.ingka.ikea.com/dpr/v1/data_product'
         headers = {
             "Authorization": f"Bearer {access_token}",
             "Content-Type": "application/json",
         }
-        response = requests.get(GET_URL, headers=headers)
+        response = requests.get(self.DPR_URL, headers=headers)
+        return response.json()
+
+    def create_data_product(self, access_token, data_product_spec):
+        headers = {
+            "Authorization": f"Bearer {access_token}",
+            "Content-Type": "application/json",
+        }
+        response = requests.post(self.DPR_URL, headers=headers, json=data_product_spec)
         return response.json()
 
 
@@ -52,10 +58,10 @@ def main():
     registration = DataProductRegistration()
     auth_response = registration.authorisation()
     access_token = auth_response.get("access_token")
-    data_products = registration.get_data_products(access_token)
+    data_product = registration.create_data_product(access_token, data_product_spec)
 
-    print(f"The first data product team is: {data_products[0]['team']['name']}")
-    print(f"The first data product id is: {data_products[0]['data_product_id']}")
+    print(f"The first data product team is: {data_product['team']['name']}")
+    print(f"The first data product id is: {data_product['data_product_id']}")
 
 if __name__ == "__main__":
     main()
