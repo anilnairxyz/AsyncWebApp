@@ -1,6 +1,23 @@
 {
-  "numbers": {
-    "number1": 5,
-    "number2": 10
+  "data_product_name": "EMB",
+  "display_name": "Enterprise Metadata Backbone",
+  "version": "0.1.0",
+  "description": "The metadata backbone & repository, aims to enable efficient metadata discovery, governance, and management. It will empower data citizens, such as data engineers, data scientists, and business analysts, to easily find and understand the available data products, their origins, transformations, and relationships, through data consumption applications such as the Ingka Data Marketplace.",
+  "confidentiality": "Confidential",
+  "data_product_type": "Consumer oriented",
+  "data_product_stage": "Production",
+  "data_domain": "Technology",
+  "system_id": "SM-116716",
+  "home_url": "https://confluence.build.ingka.ikea.com/display/DISCOVERY/Ryggrad%3A+metadata+backbone",
+  "access_request_url": "https://allen.ingka.com/catalog/default/system/emb",
+  "team": {
+    "github_team": "https://github.com/orgs/ingka-group-digital/teams/data-discovery",
+    "group": "DET_EMB",
+    "name": "DET_EMB",
+    "people": [
+      "jonathan.gabor@ingka.ikea.com",
+      "maciej.salski@ingka.com"
+    ],
+    "slack_channel": "#ryggrad"
   }
 }
