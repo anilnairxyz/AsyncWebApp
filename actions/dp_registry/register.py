@@ -9,13 +9,9 @@ def main():
     data_product_spec = os.getenv('INPUT_DP_SPEC')
 
     # Read attributes from data product spec file
-    numbers = json.loads(data_product_spec)
+    data_product_spec = json.loads(data_product_spec)
 
-    number1 = numbers['numbers']['number1']
-    number2 = numbers['numbers']['number2']
-
-    total = a + b + number1 + number2
-    print(f"The sum is: {total}")
+    print(f"The data product name is: {data_product_spec["display_name"]}")
 
 if __name__ == "__main__":
     main()
