@@ -58,10 +58,10 @@ def main():
     registration = DataProductRegistration()
     auth_response = registration.authorisation()
     access_token = auth_response.get("access_token")
-    data_product = registration.create_data_product(access_token, data_product_spec)
+    data_products = registration.get_data_products(access_token)
 
-    print(f"The first data product team is: {data_product['team']['name']}")
-    print(f"The first data product id is: {data_product['data_product_id']}")
+    print(f"The first data product team is: {data_products[0]['team']['name']}")
+    print(f"The first data product id is: {data_products[0]['data_product_id']}")
 
 if __name__ == "__main__":
     main()
